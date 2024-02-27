@@ -7,6 +7,10 @@ const elementoMostrato = document.getElementById("valore"); //elementoMostrato =
 
 window.onload = function () {
   elementoMostrato.textContent = localStorage.getItem("nome");
+  gestioneTimer();
+  setInterval(() => {
+    gestioneTimer();
+  }, 1000);
 };
 
 form.onsubmit = function (e) {
@@ -33,6 +37,6 @@ function gestioneTimer() {
   }
 
   contatore++;
-  sessionStorage.getItem("contatore", contatore);
+  sessionStorage.setItem("contatore", contatore);
   timer.textContent = contatore;
 }
